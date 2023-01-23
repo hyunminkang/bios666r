@@ -24,9 +24,21 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// ibsMatrix
+NumericMatrix ibsMatrix(NumericMatrix genoMat);
+RcppExport SEXP _bios666r_ibsMatrix(SEXP genoMatSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type genoMat(genoMatSEXP);
+    rcpp_result_gen = Rcpp::wrap(ibsMatrix(genoMat));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_bios666r_emHaplotyping", (DL_FUNC) &_bios666r_emHaplotyping, 4},
+    {"_bios666r_ibsMatrix", (DL_FUNC) &_bios666r_ibsMatrix, 1},
     {NULL, NULL, 0}
 };
 

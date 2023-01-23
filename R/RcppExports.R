@@ -13,3 +13,10 @@ emHaplotyping <- function(genoMat, possibleHaps, max_iter = 100L, tol = 1e-6) {
     .Call(`_bios666r_emHaplotyping`, genoMat, possibleHaps, max_iter, tol)
 }
 
+#' Calculate IBS matrix efficiently
+#' @param genoMat - (n.variants) x (n.sample) matrix of 0,1,2-encoded genotypes
+#' @return A matrix containing IBS matrix (symmetric)
+ibsMatrix <- function(genoMat) {
+    .Call(`_bios666r_ibsMatrix`, genoMat)
+}
+
