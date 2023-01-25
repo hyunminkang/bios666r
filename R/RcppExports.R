@@ -20,3 +20,17 @@ ibsMatrix <- function(genoMat) {
     .Call(`_bios666r_ibsMatrix`, genoMat)
 }
 
+#' Estimate kinship coefficient in homogeneous population
+#' @param genoMat - (n.variants) x (n.sample) matrix of 0,1,2-encoded genotypes
+#' @return A matrix containing pairwise kinship estimates matrix (symmetric)
+kingHom <- function(genoMat) {
+    .Call(`_bios666r_kingHom`, genoMat)
+}
+
+#' Estimate kinship coefficient in heterogeneous populations
+#' @param genoMat - (n.variants) x (n.sample) matrix of 0,1,2-encoded genotypes
+#' @return A matrix containing pairwise kinship estimates matrix (symmetric)
+kingRobust <- function(genoMat) {
+    .Call(`_bios666r_kingRobust`, genoMat)
+}
+
