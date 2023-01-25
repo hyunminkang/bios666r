@@ -35,34 +35,10 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// kingHom
-NumericMatrix kingHom(NumericMatrix genoMat);
-RcppExport SEXP _bios666r_kingHom(SEXP genoMatSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericMatrix >::type genoMat(genoMatSEXP);
-    rcpp_result_gen = Rcpp::wrap(kingHom(genoMat));
-    return rcpp_result_gen;
-END_RCPP
-}
-// kingRobust
-NumericMatrix kingRobust(NumericMatrix genoMat);
-RcppExport SEXP _bios666r_kingRobust(SEXP genoMatSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericMatrix >::type genoMat(genoMatSEXP);
-    rcpp_result_gen = Rcpp::wrap(kingRobust(genoMat));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_bios666r_emHaplotyping", (DL_FUNC) &_bios666r_emHaplotyping, 4},
     {"_bios666r_ibsMatrix", (DL_FUNC) &_bios666r_ibsMatrix, 1},
-    {"_bios666r_kingHom", (DL_FUNC) &_bios666r_kingHom, 1},
-    {"_bios666r_kingRobust", (DL_FUNC) &_bios666r_kingRobust, 1},
     {NULL, NULL, 0}
 };
 
