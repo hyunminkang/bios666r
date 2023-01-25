@@ -15,7 +15,7 @@ NumericMatrix ibsMatrix(NumericMatrix genoMat) {
         int sumDiff = 0;
         for(int k=0; k < nvars; ++k) 
           sumDiff += abs(genoMat(k,i)-genoMat(k,j));
-        ibs(i,j) = 1.0 - sumDiff / (2.0 * nvars);
+        ibs(i,j) = 2.0 - (double) sumDiff / (double) nvars;
         ibs(j,i) = ibs(i,j);
       }
       ibs(i,i) = 1;
