@@ -47,7 +47,7 @@ NumericMatrix kingHom(NumericMatrix genoMat) {
         int sumSqDiff = 0;
         for(int k=0; k < nvars; ++k) 
           sumSqDiff += ((genoMat(k,i)-genoMat(k,j))*(genoMat(k,i)-genoMat(k,j)));
-        kin(i,j) = 0.5 - 0.5 * sumSqDiff / expH;
+        kin(i,j) = 0.5 - sumSqDiff / expH / 4.0;
         kin(j,i) = kin(i,j);
       }
       kin(i,i) = 0.5;
